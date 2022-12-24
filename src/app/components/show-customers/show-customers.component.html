@@ -1,0 +1,55 @@
+<div>
+    <ng-container>
+        <div class="form-group">
+            <input type="text" class="form-control m-1" placeholder="Search Here"
+                [(ngModel)]="firstName || lastName || phone">
+        </div>
+        <div class="row">
+            
+            <div class="col-md-10">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let customer of customers; index as i">
+                            <td>{{i+1 +"."}}</td>
+                            <td>{{customer.firstName}}</td>
+                            <td>{{customer.lastName}}</td>
+                            <td>{{customer.email}}</td>
+                            <td>{{customer.phone}}</td>
+                            <td>{{customer.address}}</td>
+                            <td class="overflow-hidden">
+                                <div ngbDropdown container="body">
+                                    <button type="button" class="btn btn-outline-primary btn-sm"
+                                        ngbDropdownToggle>Actions</button>
+                                    <div ngbDropdownMenu>
+                                        <button (click)="showCustomer(customer)" ngbDropdownItem><i
+                                                class="fa-solid fa-eye"></i>
+                                            View</button>
+                                        <button (click)="updateCustomer(customer)" ngbDropdownItem><i
+                                                class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                        <button (click)="deleteCustomer(customer)" ngbDropdownItem><i
+                                                class="fa-solid fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button (click)="addCustomer()" class="btn btn-primary m-3 col-2"><i
+                    class="fa-sharp fa-solid fa-plus"></i> Add customer</button>
+        </div>
+
+
+    </ng-container>
+</div>

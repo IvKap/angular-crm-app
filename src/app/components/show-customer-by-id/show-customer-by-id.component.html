@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="row g-0">
+        <div class="col-md-8">
+            <div class="card-body">
+                <h3 class="card-title mb-2">{{customer.firstName}} {{customer.lastName}}</h3>
+                <hr>
+                <p class="card-text">Email: {{customer.email}}</p>
+                <p class="card-text">Phone number: {{customer.phone}}</p>
+                <p class="card-text">Address: {{customer.address}}</p>
+
+            </div>
+
+        </div>
+        <button class="btn btn-outline-danger" (click)="showCustomerCard()">Close</button>
+    </div>
+</div>

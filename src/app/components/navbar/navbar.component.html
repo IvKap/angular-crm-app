@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">Hello {{email}}</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><button class="dropdown-item">My Profile</button></li>
+                        <li><button class="dropdown-item">Settings</button></li>
+                        <li><div (click)="logout()"><button  class="dropdown-item">Logout</button></div></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
